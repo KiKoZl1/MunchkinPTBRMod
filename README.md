@@ -77,3 +77,10 @@ Arquivos gerados neste repositorio:
 ## Aviso
 
 Projeto de modding nao-oficial, sem afiliacao com os desenvolvedores/publicadora do jogo.
+
+## Redistribuicao
+
+- Este repositorio/release distribui apenas o mod `MunchkinPTBRMod.dll`.
+- Nao redistribua arquivos originais do jogo.
+- Nao redistribua instaladores/binarios do MelonLoader junto do mod; use sempre o link oficial.
+- Para compartilhar o mod, prefira enviar o link da release oficial do GitHub.
