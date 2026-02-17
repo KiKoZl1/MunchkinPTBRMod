@@ -39,20 +39,33 @@ Mod de localizacao para **Munchkin Digital** (Unity + MelonLoader), com override
 ## Controles no jogo
 
 - `F9`: liga/desliga overlay da logo.
-- Clique na logo: abre o perfil no X/Twitter.
 
 ## Como buildar localmente
 
-1. Abra `MunchkinPTBRMod.sln` no Visual Studio ou VS Code.
-2. Garanta que `MunchkinPTBRMod.csproj` aponta para seus paths do MelonLoader/Il2CppAssemblies.
-3. Rode:
+Pre-requisitos para build:
+- `.NET SDK 6.0`
+- Jogo + MelonLoader ja instalados (para existir `MelonLoader\net6` e `MelonLoader\Il2CppAssemblies`)
+
+1. Abra a pasta do projeto no VS Code/Visual Studio.
+2. Edite `MunchkinPTBRMod.csproj` e ajuste os `HintPath` para o seu caminho real do jogo.
+3. Rode o build:
 
 ```powershell
 dotnet build MunchkinPTBRMod.sln -c Release
 ```
 
-Saida principal:
+4. Verifique a DLL gerada:
 - `bin\Release\net6.0\MunchkinPTBRMod.dll`
+
+5. (Opcional) Copie direto para a pasta de mods:
+
+```powershell
+Copy-Item .\bin\Release\net6.0\MunchkinPTBRMod.dll "E:\SteamLibrary\steamapps\common\Munchkin Digital\Mods\" -Force
+```
+
+Erros comuns de build:
+- `CS0006` / assembly nao encontrado: `HintPath` do `MunchkinPTBRMod.csproj` esta apontando para pasta errada.
+- Referencia Unity/Melon faltando: abra o jogo 1x com MelonLoader para gerar as assemblies IL2CPP.
 
 ## Publicacao (release)
 
